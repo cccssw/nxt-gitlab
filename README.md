@@ -3,13 +3,7 @@ nxt-gitlab
 
 This is a fork of original node-gitlab repository (https://github.com/moul/node-gitlab), we add some new features and bugfixes. All our changes are submited to the original repository as pull request, but in order to speed up the process of producing a new node and meteor module we decide to host own package.
 
-[![Build Status (Travis)](https://travis-ci.org/moul/node-gitlab.png?branch=master)](https://travis-ci.org/moul/node-gitlab)
-[![Build Status (Shippable)](https://api.shippable.com/projects/5371096b93ac868700b434d9/badge/develop)](https://www.shippable.com/projects/5371096b93ac868700b434d9)
-[![Dependency Status](https://david-dm.org/moul/node-gitlab.png?theme=shields.io)](https://david-dm.org/moul/node-gitlab)
-[![authors](https://sourcegraph.com/api/repos/github.com/moul/node-gitlab/badges/authors.png)](https://sourcegraph.com/github.com/moul/node-gitlab)
-[![library users](https://sourcegraph.com/api/repos/github.com/moul/node-gitlab/badges/library-users.png)](https://sourcegraph.com/github.com/moul/node-gitlab)
-[![Total views](https://sourcegraph.com/api/repos/github.com/moul/node-gitlab/counters/views.png)](https://sourcegraph.com/github.com/moul/node-gitlab)
-[![Views in the last 24 hours](https://sourcegraph.com/api/repos/github.com/moul/node-gitlab/counters/views-24h.png)](https://sourcegraph.com/github.com/moul/node-gitlab)
+
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/moul/node-gitlab/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 [![NPM Badge](https://nodei.co/npm/gitlab.png?downloads=true&stars=true)](https://npmjs.org/package/gitlab)

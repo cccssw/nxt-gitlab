@@ -1,7 +1,7 @@
 nxt-gitlab
 ===========
 
-This is a fork of original node-gitlab repository (https://github.com/moul/node-gitlab), we add some new features and bugfixes. All out changes we submit to original repository as pull request, but in order to speed up the process of producing a new node and meteor package we decide to host own package.
+This is a fork of original node-gitlab repository (https://github.com/moul/node-gitlab), we add some new features and bugfixes. All our changes are submited to the original repository as pull request, but in order to speed up the process of producing a new node and meteor module we decide to host own package.
 
 [![Build Status (Travis)](https://travis-ci.org/moul/node-gitlab.png?branch=master)](https://travis-ci.org/moul/node-gitlab)
 [![Build Status (Shippable)](https://api.shippable.com/projects/5371096b93ac868700b434d9/badge/develop)](https://www.shippable.com/projects/5371096b93ac868700b434d9)

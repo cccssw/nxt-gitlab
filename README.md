@@ -92,7 +92,11 @@ Contributors
 - [luoqpolyvi](https://github.com/luoqpolyvi)
 - [Brian Vanderbusch](https://github.com/LongLiveCHIEF)
 - [daprahamian](https://github.com/daprahamian)
-Ermlab - members
+
+
+Ermlab Contributors
+--------------------
+
 - [pgorecki](https://github.com/pgorecki)
 - [mkkalinowski](https://github.com/mkkalinowski)
 - [ksirg](https://github.com/ksirg)

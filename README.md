@@ -94,8 +94,8 @@ Contributors
 - [daprahamian](https://github.com/daprahamian)
 Ermlab - members
 - [pgorecki](https://github.com/pgorecki)
-- [@mkkalinowski]()
-- [@ksirg]()
+- [mkkalinowski](https://github.com/mkkalinowski)
+- [ksirg](https://github.com/ksirg)
 
 License
 -------

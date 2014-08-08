@@ -1,5 +1,7 @@
-node-gitlab
+nxt-gitlab
 ===========
+
+This is a fork of original node-gitlab repository (https://github.com/moul/node-gitlab), we add some new features and bugfixes. All out changes we submit to original repository as pull request, but in order to speed up the process of producing a new node and meteor package we decide to host own package.
 
 [![Build Status (Travis)](https://travis-ci.org/moul/node-gitlab.png?branch=master)](https://travis-ci.org/moul/node-gitlab)
 [![Build Status (Shippable)](https://api.shippable.com/projects/5371096b93ac868700b434d9/badge/develop)](https://www.shippable.com/projects/5371096b93ac868700b434d9)
@@ -21,7 +23,7 @@ Install
 
 ```bash
 # Install from npm
-npm install gitlab
+npm install nxt-gitlab
 ```
 
 Usage
@@ -31,7 +33,7 @@ Coffee-Script
 -------------
 ```coffee
 # Connection
-gitlab = (require 'gitlab')
+gitlab = (require 'nxt-gitlab')
   url:   'http://example.com'
   token: 'abcdefghij123456'
 
@@ -49,7 +51,7 @@ Javascript
 ----------
 ```javascript
 // Connection
-var gitlab = require('gitlab')({
+var gitlab = require('nxt-gitlab')({
   url:   'http://example.com',
   token: 'abcdefghij123456'
 });
@@ -90,7 +92,10 @@ Contributors
 - [luoqpolyvi](https://github.com/luoqpolyvi)
 - [Brian Vanderbusch](https://github.com/LongLiveCHIEF)
 - [daprahamian](https://github.com/daprahamian)
+Ermlab - members
 - [pgorecki](https://github.com/pgorecki)
+- [@mkkalinowski]()
+- [@ksirg]()
 
 License
 -------

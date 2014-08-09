@@ -27,7 +27,7 @@ Coffee-Script
 -------------
 ```coffee
 # Connection
-gitlab = (require 'nxt-gitlab')
+gitlab = (require 'gitlab')
   url:   'http://example.com'
   token: 'abcdefghij123456'
 
@@ -45,7 +45,7 @@ Javascript
 ----------
 ```javascript
 // Connection
-var gitlab = require('nxt-gitlab')({
+var gitlab = require('gitlab')({
   url:   'http://example.com',
   token: 'abcdefghij123456'
 });

@@ -12,8 +12,8 @@ class module.exports.ApiBaseHTTP extends ApiBase
     unless @options.url
       throw "`url` is mandatory"
 
-    unless @options.token
-      throw "`private_token` is mandatory"
+    if !@options.token and !@options.access_token
+      throw "`private_token or access_token` is mandatory"
 
     @options.slumber ?= {}
     @options.slumber.append_slash ?= false
@@ -30,7 +30,11 @@ class module.exports.ApiBaseHTTP extends ApiBase
 
   prepare_opts: (opts) =>
     opts.__query ?= {}
-    opts.__query.private_token = @options.token
+    if @options.token
+      opts.__query.private_token = @options.token
+    if @options.access_token
+      opts.__query.access_token = @options.access_token    
+    
     return opts
 
   fn_wrapper: (fn) =>

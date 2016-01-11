@@ -1,6 +1,6 @@
-nxt-gitlab
+nct-gitlab(fork from nxt-gitlab)
 ===========
-
+This is a fork of
 This is a fork of original node-gitlab repository (https://github.com/moul/node-gitlab), we add some new features and bugfixes. All our changes are submited to the original repository as pull request, but in order to speed up the process of producing a new node and meteor module we decide to host own package.
 
 
@@ -17,7 +17,7 @@ Install
 
 ```bash
 # Install from npm
-npm install nxt-gitlab
+npm install nct-gitlab
 ```
 
 Usage
@@ -30,6 +30,11 @@ Coffee-Script
 gitlab = (require 'gitlab')
   url:   'http://example.com'
   token: 'abcdefghij123456'
+
+or
+gitlab = (require 'gitlab')
+  url:   'http://example.com'
+  access_token: 'abcdefghij123456'
 
 # Listing users
 gitlab.users.all (users) ->
@@ -49,6 +54,14 @@ var gitlab = require('gitlab')({
   url:   'http://example.com',
   token: 'abcdefghij123456'
 });
+
+or
+
+var gitlab = require('gitlab')({
+  url:   'http://example.com',
+  access_token: 'abcdefghij123456'
+});
+
 
 // Listing users
 gitlab.users.all(function(users) {
@@ -77,7 +90,7 @@ Use `cake watch` to build files continuously while developing.
 
 Contributors
 ------------
-
+- [cccssw](https://github.com/cccssw)
 - [Dave Irvine](https://github.com/dave-irvine)
 - [Glavin Wiechert](https://github.com/Glavin001)
 - [Florian Quiblier](https://github.com/fofoy)

@@ -1,8 +1,7 @@
 debug = require('debug') 'gitlab:ApiBaseHTTP'
 {ApiBase} = require './ApiBase'
 querystring = require 'querystring'
-slumber = require 'slumber'
-
+rest = require 'rest-js'
 
 class module.exports.ApiBaseHTTP extends ApiBase
   handleOptions: =>
@@ -15,6 +14,7 @@ class module.exports.ApiBaseHTTP extends ApiBase
     if !@options.token and !@options.access_token
       throw "`private_token or access_token` is mandatory"
 
+    @options.restOption ||= {defaultFormat: '',crossDomain: true,}
     @options.slumber ?= {}
     @options.slumber.append_slash ?= false
 
@@ -25,8 +25,7 @@ class module.exports.ApiBaseHTTP extends ApiBase
 
   init: =>
     super
-    api = slumber.API @options.url, @options.slumber
-    @slumber = api(@options.base_url)
+    @slumber = rest @options.url+"/"+@options.base_url+"/",@options.restOption
 
   prepare_opts: (opts) =>
     opts.__query ?= {}
@@ -38,34 +37,45 @@ class module.exports.ApiBaseHTTP extends ApiBase
     return opts
 
   fn_wrapper: (fn) =>
-    return (err, response, ret) =>
+    return (err, ret) =>
       if err
         debug 'an error has occured', err
       arity = fn.length
       switch arity
         when 1 then fn ret
         when 2 then fn err, ret
-        when 3 then fn err, response, ret
+  authPath:(path,query)=>
+    opts = @prepare_opts query
+    if opts.__query.private_token
+      path+="?private_token="+opts.__query.private_token
+    if opts.__query.access_token
+      path+="?access_token="+opts.__query.access_token
+    return path
 
   get: (path, query={}, fn=null) =>
     if 'function' is typeof query
       fn = query
       query = {}
     opts = @prepare_opts query
-    @slumber(path).get opts, @fn_wrapper fn
+    path = @authPath path,query
+    @slumber.read path,opts, @fn_wrapper fn
 
   delete: (path, fn=null) =>
     opts = @prepare_opts {}
-    @slumber(path).delete opts, @fn_wrapper fn
+    path = @authPath path,{}
+    @slumber.remove path, opts, @fn_wrapper fn
 
   post: (path, data={}, fn=null) =>
     opts = @prepare_opts data
-    @slumber(path).post opts, @fn_wrapper fn
+    path = @authPath path,data
+    @slumber.create path, opts, @fn_wrapper fn
 
   put: (path, data={}, fn=null) =>
     opts = @prepare_opts data
-    @slumber(path).put opts, @fn_wrapper fn
+    path = @authPath path,data
+    @slumber.update path, opts, @fn_wrapper fn
 
   patch: (path, data={}, fn=null) =>
     opts = @prepare_opts data
-    @slumber(path).patch opts, @fn_wrapper fn
+    path = @authPath path,data
+    @slumber.update path, opts, @fn_wrapper fn
